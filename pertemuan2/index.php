@@ -64,7 +64,7 @@
 
         echo $nama_depan . " " . $nama_belakang;
 
-    // Assignment
+    // ASSIGNMENT
     // operator penugasan
     // =, +=,-=, *=, /=, %=, .=
         $x = 10;
@@ -72,16 +72,16 @@
 
         echo $x;
 
-    // Perbandingan
+    // PERBANDINGAN
     // <, >, <=, >=, ==, !=
     // var_dumb (1 == "1"); ==> akan menghasilkan bool true, karena operator perbandingan hanya mengecek nilai bukan tipe data nya.
 
-    // Identitas
+    // IDENTITAS
     // ===, !==
     // var_dumb (1 === "1"); ==> akan menghasilkan boolen false.
 
-    //Logika
+    // LOGIKA
     // &&, ||, ! (and, or, not)
-        $a = 10;
-        var_dumb ($a < 20 && $a % 2 == 0);
+    // $a = 10;
+    // var_dumb ($a < 20 && $a % 2 == 0); ==> menghasilkan bool true
 ?>
