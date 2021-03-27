@@ -17,109 +17,118 @@
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
+
+h2 {
+  margin: 20px 0;
+}
+
 table {
   display: inline-flexbox;
   font-size: 15px;
-  text-align: center;
   padding-right: 50px;
+}
+
+img {
+  width: 200px;
 }
 </style>
 <body>
     <?php
-    $distro = [
-        ["no" => "1",
-        "Picture" => "img/img1.jpg",
-        "Name" => "Black Hoodie",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.100.000",
-        "Size" => "S M L XL"],
+    $toko_buku = [
+      [
+        "no" => "1",
+        "gambar" => "Fungsi_Statistika.jpg",
+        "judul_buku" => "Fungsi Statistika untuk Menganalisis Data",
+        "description" => "Bukan hanya berisi fungsi-fungsi statistik saja, tetapi juga keseluruhan fungsi-fungsi pendukung yang memungkinkan kita bekerja dalam bidang statistik. Meliputi persiapan data dan pengolahan data sebelum dilakukan perhitungan menggunakan fungsi-fungsi statistik.",
+        "penulis" => "Adi Kusrianto",
+        "penerbit" => "ELEX MEDIA KOMPUTINDO",
+        "tahun_terbit" => "2019",
+        "harga" => "56.999"
+      ],
 
-        ["no" => "2",
-        "Picture" => "img/img2.jpg",
-        "Name" => "White Hoodie",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.15 0.000",
-        "Size" => "S M L XL"],
+      [
+        "no" => "2",
+        "gambar" => "Microcontroller_Menguasai_Arduino.jpg",
+        "judul_buku" => "Microcontroller Menguasai Arduino",
+        "description" => "Membuat perangkat elektronik super canggih dijaman sekarang tidaklah harus repot-repot belajar selama bertahun-tahun.",
+        "penulis" => "Indra Susanto, S.Kom.",
+        "penerbit" => "TEKNOSAIN",
+        "tahun_terbit" => "2018",
+        "harga" => "129.999"
+      ],
 
-        ["no" => "3",
-        "Picture" => "img/img3.jpg",
-        "Name" => "Maroon Hoodie",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.400.000",
-        "Size" => "S M L XL"],
+      [
+        "no" => "3",
+        "gambar" => "PHP_Gila_2.jpg",
+        "judul_buku" => "PHP Gila 2! 65 TRIK APLIKATIF MASTER PHP",
+        "description" => "Berbeda konsep dari buku PHP Gila yang sudah diterbitkan sebelumnya yang menyertakan bonus proyek pada buku, pada buku kali ini tidak ada bonus Proyek, tetapi hanya menyertakan bonus Full Source Code yang dibahas dalam buku ini.",
+        "penulis" => "Agus Saputra",
+        "penerbit" => "CV. ASFA SOLUTION",
+        "tahun_terbit" => "2017",
+        "harga" => "84.999"
+      ],
 
-        ["no" => "4",
-        "Picture" => "img/img4.jpg",
-        "Name" => "Pink Hoodie",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.100.000",
-        "Size" => "S M L XL"],
+      [
+        "no" => "4",
+        "gambar" => "Belajar_Pemrograman_Android.jpg",
+        "judul_buku" => "Belajar Pemrograman Android Untuk Semua Kebutuhan",
+        "description" => "Buku dengan Judul “Belajar Pemrograman Android untuk Semua Kebutuhan” ini berisi bagaimana membuat program Android dengan bahasa Java.⁣",
+        "penulis" => "Ir. Yanuar Supardi",
+        "penerbit" => "ELEX MEDIA KOMPUTINDO",
+        "tahun_terbit" => "2019",
+        "harga" => "79.999"
+      ],
 
-        ["no" => "5",
-        "Picture" => "img/img5.jpg",
-        "Name" => "white Tshirt",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.100.000",
-        "Size" => "S M L XL"],
+      [
+        "no" => "5",
+        "gambar" => "Perancangan_Basis_Data.jpg",
+        "judul_buku" => "Microcontroller Menguasai Arduino",
+        "description" => "aat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.",
+        "penulis" => "Raden Budiarto",
+        "penerbit" => "TEKNOSAIN",
+        "tahun_terbit" => "2019",
+        "harga" => "206.999"
+      ],
 
-        ["no" => "6",
-        "Picture" => "img/img6.jpg",
-        "Name" => "Black Tshirt",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.300.000",
-        "Size" => "S M L XL"],
-
-        ["no" => "7",
-        "Picture" => "img/img7.jpg",
-        "Name" => "Maroon Tshirt",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.200.000",
-        "Size" => "S M L XL"],
-
-        ["no" => "8",
-        "Picture" => "img/img8.jpg",
-        "Name" => "Grey Tshirt",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.500.000",
-        "Size" => "S M L XL"],
-
-        ["no" => "9",
-        "Picture" => "img/img9.jpg",
-        "Name" => "Blue Crewneck",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.600.000",
-        "Size" => "S M L XL"],
-
-        ["no" => "10",
-        "Picture" => "img/img10.jpg",
-        "Name" => "Green crewneck",
-        "Description" => "Coton 60%, Polyester 40%Doublure de capuche: Polyester 100%",
-        "Price" => "Rp.100.000",
-        "Size" => "S M L XL"],
+      [
+        "no" => "6",
+        "gambar" => "Desain_Database.jpg",
+        "judul_buku" => "Desain Database dengan ERD dan LRS",
+        "description" => "Buku ini berisi konsep database yang di dalamnya dibahas tentang definisi, manfaat, kelebihan dan kekurangan database sampai pada konsep penggunaan tipe data. Konsep dari database system dan database relasional dijelaskan dalam buku ini.",
+        "penulis" => "Anik Andriani, dkk",
+        "penerbit" => "TEKNOSAIN",
+        "tahun_terbit" => "2019",
+        "harga" => "134.999"
+      ],
     ];
 ?>
 <div class="jaket">
-    <h2>Distro<h2>
+    <h2>Toko Buku<h2>
     <table class="table table-bordered table-info table-hover "  >
   <thead>
   <tbody>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Picture</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Price</th>
-      <th scope="col">Size</th>
+      <th scope="col">Gambar</th>
+      <th scope="col">Judul Buku</th>
+      <th scope="col">Deskripsi</th>
+      <th scope="col">Penulis</th>
+      <th scope="col">Penerbit</th>
+      <th scope="col">Tahun Terbit</th>
+      <th scope="col">Harga</th>
     </tr>
-    <?php foreach ($distro as $i) { ?>
+    <?php foreach ($toko_buku as $buku) { ?>
         <tr>
-            <td><?php echo $i["no"]; ?></td>
-            <td><img src="img/<?php echo $i["Picture"]?>"></td>    
-            <td><?php echo $i["Name"]; ?><br></td>
-            <td><?php echo $i["Description"]; ?><br></td>
-            <td><?php echo $i["Price"]; ?><br></td>
-            <td><?php echo $i["Size"]; ?><br></td>
+            <td><?= $buku["no"]; ?></td>
+            <td><img src="img/<?= $buku["gambar"]?>"></td>    
+            <td><?= $buku["judul_buku"]; ?><br></td>
+            <td><?= $buku["description"]; ?><br></td>
+            <td><?= $buku["penulis"]; ?><br></td>
+            <td><?= $buku["penerbit"]; ?><br></td>
+            <td><?= $buku["tahun_terbit"]; ?><br></td>
+            <td><?= $buku["harga"]; ?><br></td>
 
         </tr>   
       </tbody>
