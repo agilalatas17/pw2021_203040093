@@ -41,7 +41,7 @@ img {
         "no" => "1",
         "gambar" => "Fungsi_Statistika.jpg",
         "judul_buku" => "Fungsi Statistika untuk Menganalisis Data",
-        "description" => "Bukan hanya berisi fungsi-fungsi statistik saja, tetapi juga keseluruhan fungsi-fungsi pendukung yang memungkinkan kita bekerja dalam bidang statistik. Meliputi persiapan data dan pengolahan data sebelum dilakukan perhitungan menggunakan fungsi-fungsi statistik.",
+        "deskripsi" => "Bukan hanya berisi fungsi-fungsi statistik saja, tetapi juga keseluruhan fungsi-fungsi pendukung yang memungkinkan kita bekerja dalam bidang statistik. Meliputi persiapan data dan pengolahan data sebelum dilakukan perhitungan menggunakan fungsi-fungsi statistik.",
         "penulis" => "Adi Kusrianto",
         "penerbit" => "ELEX MEDIA KOMPUTINDO",
         "tahun_terbit" => "2019",
@@ -52,7 +52,7 @@ img {
         "no" => "2",
         "gambar" => "Microcontroller_Menguasai_Arduino.jpg",
         "judul_buku" => "Microcontroller Menguasai Arduino",
-        "description" => "Membuat perangkat elektronik super canggih dijaman sekarang tidaklah harus repot-repot belajar selama bertahun-tahun.",
+        "deskripsi" => "Membuat perangkat elektronik super canggih dijaman sekarang tidaklah harus repot-repot belajar selama bertahun-tahun.",
         "penulis" => "Indra Susanto, S.Kom.",
         "penerbit" => "TEKNOSAIN",
         "tahun_terbit" => "2018",
@@ -63,7 +63,7 @@ img {
         "no" => "3",
         "gambar" => "PHP_Gila_2.jpg",
         "judul_buku" => "PHP Gila 2! 65 TRIK APLIKATIF MASTER PHP",
-        "description" => "Berbeda konsep dari buku PHP Gila yang sudah diterbitkan sebelumnya yang menyertakan bonus proyek pada buku, pada buku kali ini tidak ada bonus Proyek, tetapi hanya menyertakan bonus Full Source Code yang dibahas dalam buku ini.",
+        "deskripsi" => "Berbeda konsep dari buku PHP Gila yang sudah diterbitkan sebelumnya yang menyertakan bonus proyek pada buku, pada buku kali ini tidak ada bonus Proyek, tetapi hanya menyertakan bonus Full Source Code yang dibahas dalam buku ini.",
         "penulis" => "Agus Saputra",
         "penerbit" => "CV. ASFA SOLUTION",
         "tahun_terbit" => "2017",
@@ -74,7 +74,7 @@ img {
         "no" => "4",
         "gambar" => "Belajar_Pemrograman_Android.jpg",
         "judul_buku" => "Belajar Pemrograman Android Untuk Semua Kebutuhan",
-        "description" => "Buku dengan Judul “Belajar Pemrograman Android untuk Semua Kebutuhan” ini berisi bagaimana membuat program Android dengan bahasa Java.⁣",
+        "deskripsi" => "Buku dengan Judul “Belajar Pemrograman Android untuk Semua Kebutuhan” ini berisi bagaimana membuat program Android dengan bahasa Java.⁣",
         "penulis" => "Ir. Yanuar Supardi",
         "penerbit" => "ELEX MEDIA KOMPUTINDO",
         "tahun_terbit" => "2019",
@@ -85,7 +85,7 @@ img {
         "no" => "5",
         "gambar" => "Perancangan_Basis_Data.jpg",
         "judul_buku" => "Microcontroller Menguasai Arduino",
-        "description" => "aat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.",
+        "deskripsi" => "aat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.",
         "penulis" => "Raden Budiarto",
         "penerbit" => "TEKNOSAIN",
         "tahun_terbit" => "2019",
@@ -96,7 +96,7 @@ img {
         "no" => "6",
         "gambar" => "Desain_Database.jpg",
         "judul_buku" => "Desain Database dengan ERD dan LRS",
-        "description" => "Buku ini berisi konsep database yang di dalamnya dibahas tentang definisi, manfaat, kelebihan dan kekurangan database sampai pada konsep penggunaan tipe data. Konsep dari database system dan database relasional dijelaskan dalam buku ini.",
+        "deskripsi" => "Buku ini berisi konsep database yang di dalamnya dibahas tentang definisi, manfaat, kelebihan dan kekurangan database sampai pada konsep penggunaan tipe data. Konsep dari database system dan database relasional dijelaskan dalam buku ini.",
         "penulis" => "Anik Andriani, dkk",
         "penerbit" => "TEKNOSAIN",
         "tahun_terbit" => "2019",
@@ -124,7 +124,7 @@ img {
             <td><?= $buku["no"]; ?></td>
             <td><img src="img/<?= $buku["gambar"]?>"></td>    
             <td><?= $buku["judul_buku"]; ?><br></td>
-            <td><?= $buku["description"]; ?><br></td>
+            <td><?= $buku["deskripsi"]; ?><br></td>
             <td><?= $buku["penulis"]; ?><br></td>
             <td><?= $buku["penerbit"]; ?><br></td>
             <td><?= $buku["tahun_terbit"]; ?><br></td>
