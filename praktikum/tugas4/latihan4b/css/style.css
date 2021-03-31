@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+table {
+  margin-left: 20px;
+  padding: 0;
+}
+
+table .table-head {
+  font-size: 22px;
+}
+
+img {
+  width: 200px;
+}

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  margin: 20px 0;
+}
+
+table {
+  display: inline-flexbox;
+  font-size: 15px;
+  padding-right: 50px;
+}
+
+img {
+  width: 200px;
+}
