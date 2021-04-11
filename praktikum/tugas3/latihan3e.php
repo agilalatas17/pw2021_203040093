@@ -84,8 +84,8 @@ img {
       [
         "no" => "5",
         "gambar" => "Perancangan_Basis_Data.jpg",
-        "judul_buku" => "Microcontroller Menguasai Arduino",
-        "deskripsi" => "aat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.",
+        "judul_buku" => "Perancangan Basis Data",
+        "deskripsi" => "Saat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.",
         "penulis" => "Raden Budiarto",
         "penerbit" => "TEKNOSAIN",
         "tahun_terbit" => "2019",
@@ -104,7 +104,7 @@ img {
       ],
     ];
 ?>
-<div class="jaket">
+<div class="buku">
     <h2>Toko Buku<h2>
     <table class="table table-bordered table-info table-hover "  >
   <thead>
