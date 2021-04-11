@@ -1,7 +1,7 @@
 <?php
     //mengecek apakah ada id yang dikirimkan
     //jika tidak maka akan dikembalikan ke halaman index.php
-    if (!isset($_GET['id_buku'])) {
+    if (!isset($_GET['id'])) {
         header("location: ./index.php");
         exit;
     }
@@ -9,14 +9,15 @@
     require 'functions.php';
 
     //mengambil id dari url
-    $id = $_GET['id_buku'];
+    $id = $_GET['id'];
 
     //melakukan query dengan parameter id yang diambil dari url
-    $buku = query("SELECT * FROM daftar_buku WHERE id_buku = $id")[0];
+    $buku = query("SELECT * FROM daftar_buku WHERE id = $id")[0];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,9 +29,10 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Detail Buku</title>
 </head>
+
 <body>
     <div class="container">
-            
+
         <table>
             <tbody>
                 <tr>
@@ -63,7 +65,8 @@
                     <td>
                         <div class="keterangan">
                             <p><?= $buku["penulis"]; ?>
- </p>                       </div>
+                            </p>
+                        </div>
                     </td>
                 </tr>
 
@@ -105,4 +108,5 @@
         </table>
     </div>
 </body>
+
 </html>
