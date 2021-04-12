@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2021 at 03:15 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Apr 12, 2021 at 03:43 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,31 +28,32 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `daftar_buku` (
-  `id_buku` int(10) NOT NULL,
-  `gambar` varchar(100) NOT NULL,
-  `judul_buku` varchar(100) NOT NULL,
-  `deskripsi` varchar(500) DEFAULT NULL,
-  `penulis` varchar(100) NOT NULL,
+  `id` int(10) NOT NULL,
+  `gambar` varchar(150) NOT NULL,
+  `judul_buku` varchar(150) NOT NULL,
+  `deskripsi` varchar(500) NOT NULL,
+  `penulis` varchar(150) NOT NULL,
   `tahun_terbit` int(4) NOT NULL,
-  `penerbit` varchar(100) NOT NULL,
-  `harga` varchar(7) NOT NULL
+  `penerbit` varchar(150) NOT NULL,
+  `stok` int(4) DEFAULT NULL,
+  `harga` varchar(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `daftar_buku`
 --
 
-INSERT INTO `daftar_buku` (`id_buku`, `gambar`, `judul_buku`, `deskripsi`, `penulis`, `tahun_terbit`, `penerbit`, `harga`) VALUES
-(1, 'Microcontroller_Menguasai_Arduino.jpg', 'Microcontroller Menguasai Arduino', 'Membuat perangkat elektronik super canggih dijaman sekarang tidaklah harus repot-repot belajar selama bertahun-tahun.', 'Indra Susanto, S.Kom.', 2018, 'TEKNOSAIN', '129.999'),
-(2, 'Fungsi_Statistika.jpg', 'Fungsi Statistika untuk Menganalisis Data', 'Bukan hanya berisi fungsi-fungsi statistik saja, tetapi juga keseluruhan fungsi-fungsi pendukung yang memungkinkan kita bekerja dalam bidang statistik. Meliputi persiapan data dan pengolahan data sebelum dilakukan perhitungan menggunakan fungsi-fungsi statistik.', 'Adi Kusrianto', 2019, 'ELEX MEDIA KOMPUTINDO', '56.999'),
-(3, 'PHP_Gila_2.jpg', 'PHP Gila 2! 65 TRIK APLIKATIF MASTER PHP', 'Berbeda konsep dari buku PHP Gila yang sudah diterbitkan sebelumnya yang menyertakan bonus proyek pada buku, pada buku kali ini tidak ada bonus Proyek, tetapi hanya menyertakan bonus Full Source Code yang dibahas dalam buku ini.', 'Agus Saputra', 2017, 'CV. ASFA SOLUTION', '84.999'),
-(4, 'Belajar_Pemrograman_Android.jpg', 'Belajar Pemrograman Android Untuk Semua Kebutuhan', 'Buku dengan Judul “Belajar Pemrograman Android untuk Semua Kebutuhan” ini berisi bagaimana membuat program Android dengan bahasa Java.', 'Ir. Yanuar Supardi', 2019, 'ELEX MEDIA KOMPUTINDO', '79.999'),
-(5, 'Perancangan_Basis_Data.jpg', 'Perancangan Basis Data', 'Saat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia.', 'Raden Budiarto', 2019, 'TEKNOSAIN', '206.999'),
-(6, 'Desain_Database.jpg', 'Desain Database dengan ERD dan LRS', 'Buku ini berisi konsep database yang di dalamnya dibahas tentang definisi, manfaat, kelebihan dan kekurangan database sampai pada konsep penggunaan tipe data. Konsep dari database system dan database relasional dijelaskan dalam buku ini.', 'Anik Andriani, dkk', 2019, 'TEKNOSAIN', '134.999'),
-(7, 'membuat_website.jpg', 'Cepat, Praktis dan Gratis Membuat Website', 'Buku ini hadir untuk memandumu membuat website dengan cepat, mudah, praktis, dan pastinya gratis. Melalui buku ini, kamu akan dipandu untuk membuat website memakai platform gratis di internet.', 'Jefferly Helianthusonfri', 2019, 'ELEX MEDIA KOMPUTINDO', '67.999'),
-(8, 'hacking_carding.jpg', 'Bongkar Rahasia Security dengan TEKNIK HACKING dan CARDING', 'Buku ini akan menunjukkan kepada kamu bagaimana sistem E-Banking dilakukan, mulai dari cara kerja, sistem keamanan beserta kelemahannya, termasuk pula cara mengeksploitasinya.', 'Vyctoria', 2013, 'ANDI', '79.999'),
-(9, 'framework_laravel_6.jpg', 'PANDUAN PRAKTIS DAN JITU FRAMEWORK LARAVEL 6', 'Membuat program aplikasi di Windows memang sudah biasa, namun bagaimana bila kita membuatnya di OS linux? Tentu inilah adalah hal yang sangat luar biasa.⁣', 'Anton Subagia', 2020, 'CV. ASIA SOLUTION', '64.999'),
-(10, 'belajar_mudah_python.jpg', 'Belajar Mudah Python dengan Package Open Source', 'Python merupakan bahasa intrepreter yang banyak digunakan untuk kepentingan akademis, riset, bahkan para praktisi umum dikarenakan tersedianya package-package yang siap pakai mulai dari untuk komputasi numerik, array, olah grafik, sinyal, machine learning, dan computer vision.', 'Mulkan Syarif', 2018, 'TEKNOSAIN', '110.999');
+INSERT INTO `daftar_buku` (`id`, `gambar`, `judul_buku`, `deskripsi`, `penulis`, `tahun_terbit`, `penerbit`, `stok`, `harga`) VALUES
+(1, 'belajar_mudah_python.jpg', 'Belajar Mudah Python dengan Package Open Source', 'Python merupakan bahasa intrepreter yang banyak digunakan untuk kepentingan akademis, riset, bahkan para praktisi umum dikarenakan tersedianya package-package yang siap pakai mulai dari untuk komputasi numerik, array, olah grafik, sinyal, machine learning, dan computer vision.', 'Mulkan Syarif', 2018, 'TEKNOSAIN', 15, '110.999'),
+(2, 'Belajar_Pemrograman_Android.jpg', 'Belajar Pemrograman Android Untuk Semua Kebutuhan', 'Keunggulan buku ini, yaitu memandu kamudengan mudah dan cepat belajar membuat program Android yang dapat dipakai semua kalangan, termasuk untuk mahasiswa. Buku ini juga mempunyai nilai lebih, yakni pembahasan yang detail atau rinci. Dengan banyaknya contoh aplikasi, kamu akan semakin memahami cara membuat program Android dengan mudah.⁣', 'Ir. Yanuar Supardi', 2019, 'ELEX MEDIA KOMPUTINDO', 12, '79.999'),
+(3, 'Desain_Database.jpg', 'Desain Database dengan ERD dan LRS', 'Buku ini berisi konsep database yang di dalamnya dibahas tentang definisi, manfaat, kelebihan dan kekurangan database sampai pada konsep penggunaan tipe data. Konsep dari database system dan database relasional dijelaskan dalam buku ini. Buku berisi pembahasan utama tentang perancangan database menggunakan ERD dan LRS dimana sebelumnya dijelaskan terlebih dahulu konsep dari ERD dan LRS, simbol-simbol yang digunakan dalam ERD dan LRS yang diikuti dengan contoh penggunaannya.', 'Anik Andriani, dkk', 2019, 'TEKNOSAIN', 15, '134.999'),
+(4, 'framework_laravel_6.jpg', 'Panduan Praktis Dan Jitu Menguasai Framework Laravel 6', 'Buku ini membahas tentang secara step by step dari mulai melakukan instalasi PostgreSQL dan PgAdmin, instalasi Composer dan Laravel 6, operasi CRUD, implementasi CRUD dengan AJAX, membuat PDF, barcode, import dan export file Excel, konversi tanggal dan mata uang, dan berbagai macam trik Laravel 6 lainnya. Menariknya buku ini disertai Bonus Source Code sebagai Referensi belajar kamu.⁣', 'Anton Subagia', 2020, 'CV. ASFA SOLUTION', 20, '64.999'),
+(5, 'Fungsi_Statistika.jpg', 'Fungsi Statistika untuk Menganalisis Data', 'Perlu Anda ketahui pula bahwa bila Anda bekerja dengan Excel 2010 ternyata banyak nama-nama fungsi Excel yang diubah; lebih disesuaikan agar nama konsisten dengan kegunaannya. Fungsi-fungsi statistik adalah salah satu kelompok yang banyak memperoleh pembenahan. Jelas ini sangat mempermudah bagi para pemakai Excel karena nama-nama yang semula terasa janggal dan sulit dikenali serta dihafal sekarang menjadi nama yang lebih konsisten dengan gunanya.', 'Adi kusrianto', 2019, 'ELEX MEDIA KOMPUTINDO', 14, '56.999'),
+(6, 'hacking_carding.jpg', 'Bongkar Rahasia E-Banking Security dengan Teknik Hacking dan Carding', 'Buku ini akan menunjukkan kepada kamu bagaimana sistem E-Banking dilakukan, mulai dari cara kerja, sistem keamanan beserta kelemahannya, termasuk pula cara mengeksploitasinya. Begitu pula dengan pembahasan Carding, juga akan menjelaskan cara kerja, bagaimana mendapatkannya dan sebagainya.⁣', 'Vyctoria', 2013, 'ANDI', 13, '79.999'),
+(7, 'membuat_website.jpg', 'Cepat, Praktis dan Gratis Membuat Website', 'Buku ini hadir untuk memandumu membuat website dengan cepat, mudah, praktis, dan pastinya gratis. Melalui buku ini, kamu akan dipandu untuk membuat website memakai platform gratis di internet. Dijamin kamu bisa membuat web bisnis yang keren dengan mudah dan cepat.', 'Jefferly Helianthusonfri', 2019, 'ELEX MEDIA KOMPUTINDO', 18, '67.999'),
+(8, 'Microcontroller_Menguasai_Arduino.jpg', 'Microcontroller Menguasai Arduino', 'Di dalam buku ini kamu akan di perkenalkan dengan Arduino, bagaimana menyambungnya dengan komponen-komponen elektronik (LED, transistor, Resistor, dll), sensor, shield ekstended, Motor Stepper, Layar LCD, Layar TV, menguasai Code Sketch dan komunikasi antar perangkat Arduino melalui standar yang sudah ditentukan.', 'Indra Susanto S.Kom.', 2018, 'TEKNOSAIN', 8, '129.999'),
+(9, 'Perancangan_Basis_Data.jpg', 'PERANCANGAN BASIS DATA', 'Saat ini kita hidup di era informasi di mana keberadaan informasi begitu melimpah dan mudah diakses oleh siapa saja melalui internet. Hal ini tidak terkecuali informasi terkait perancangan basis data di media internet yang berbahasa Indonesia. Bagaimana pun berdasarkan penelitian membuktikan lebih dari 90% sumber informasi tersebut ternyata tidak akurat, tidak lengkap atau tidak jelas. Ditambah lagi keberadaan buku teks seputar basis data saat ini masih cenderung menjelaskan apa atau bagaimana t', 'Raden Budiarto', 2019, 'TEKNOSAIN', 11, '206.999'),
+(10, 'PHP_Gila_2.jpg', 'PHP Gila 2! 65 Trik Aplikatif Master PHP Paling Dicari!', 'uku ini membahas berbagai hal yang dihadapi oleh para developer, bisa dikatakan ini adalah Trik Ampuh para Master PHP, dibahas berbagai macam trik yang dibagi dalam 11 konsentrasi, dimulai dari Trik Menguasai PHP Excel, Editor WYSIWYG, PHP PDF, PHP Pagination, PHP Email, PHP Barcode, PHP Ekspedisi Online, Tracking Online, Google Maps API, GitHub (Sharing Version Control), hingga kepada Trik Menguasai PHP Payment Online, yaitu bagaimana membuat pembayaran secara online menggunakan PayPal, iPayMu,', 'Agus Saputra', 2017, 'CV. ASFA SOLUTION', 18, '84.999');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ INSERT INTO `daftar_buku` (`id_buku`, `gambar`, `judul_buku`, `deskripsi`, `penu
 -- Indexes for table `daftar_buku`
 --
 ALTER TABLE `daftar_buku`
-  ADD PRIMARY KEY (`id_buku`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -72,7 +73,7 @@ ALTER TABLE `daftar_buku`
 -- AUTO_INCREMENT for table `daftar_buku`
 --
 ALTER TABLE `daftar_buku`
-  MODIFY `id_buku` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
