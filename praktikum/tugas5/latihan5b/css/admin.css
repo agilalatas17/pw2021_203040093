@@ -5,6 +5,19 @@ body {
   line-height: 1.5;
 }
 
+.add {
+  margin: 1.375rem 0;
+}
+
+.add a {
+  font-weight: bolder;
+  border: 2px solid;
+}
+
+.add a i {
+  font-size: 22px;
+}
+
 .table th,
 .table td {
   vertical-align: middle;
@@ -13,7 +26,7 @@ body {
 }
 
 th {
-  background-color: #00af91;
+  background-color: #ff8882;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -27,7 +40,7 @@ table img {
 }
 
 .wrapper-opt-btn {
-  width: 180px;
+  width: 11.25rem;
   display: flex;
   justify-content: space-evenly;
 }

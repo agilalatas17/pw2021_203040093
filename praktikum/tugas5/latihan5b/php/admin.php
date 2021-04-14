@@ -18,15 +18,19 @@
     <link rel="stylesheet" href="../css/bootstrap.css" />
 
     <!-- Fontawesome css -->
-    <link rel="stylesheet" href="../css/fontawesome.min.css?v2" />
+    <link rel="stylesheet" href="../css/fontawesome.min.css" />
 
     <!-- my css -->
-    <link rel="stylesheet" href="../css/admin.css?v2" />
+    <link rel="stylesheet" href="../css/admin.css" />
     <title>Halaman Admin</title>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-lg">
+        <div class="add">
+            <a href="tambah.php" class="btn btn-outline-info"><i class="fas fa-plus-circle"></i> Tambah Data</a>
+        </div>
+
         <table class="table table-bordered">
             <thead>
                 <tr>

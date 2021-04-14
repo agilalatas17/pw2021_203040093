@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <table class="table table-bordered">
             <thead>
                 <tr>

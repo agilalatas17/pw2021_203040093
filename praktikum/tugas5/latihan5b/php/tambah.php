@@ -26,59 +26,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/tambah.css" />
+    <link rel="stylesheet" href="../css/tambah.css?v2" />
 
     <!-- Bootstrap css -->
-    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css?v2" />
     <title>Tambah Data Buku</title>
 </head>
 
 <body>
-    <div class="form-wrapper">
-        <h3>Form Tambah Data Buku</h3>
+    <h1>Form Tambah Data Buku</h1>
 
-        <form action="" method="post" enctype="multipart/form-data">
-            <ul>
-                <li>
-                    <label for="gambar">Gambar</label>
-                    <input type="file" class="custom-file-input" name="gambar" id="gambar" required>
-                </li>
-                <li>
-                    <label for="judul-buku">Judul Buku</label>
-                    <input type="text" name="judul_buku" id="judul-buku">
-                </li>
-                <li>
-                    <label for="desk">Deskripsi</label>
-                    <textarea name="deskripsi" id="desk" cols="30" rows="10"></textarea>
-                </li>
-                <li>
-                    <label for="penulis">Penulis</label>
-                    <input type="text" name="penulis" id="penulis">
-                </li>
-                <li>
-                    <label for="tahun-terbit">Tahun Terbit</label>
-                    <input type="text" name="tahun_terbit" id="tahun-terbit">
-                </li>
-                <li>
-                    <label for="penerbit">Penerbit</label>
-                    <input type="text" name="penerbit" id="penerbit">
-                </li>
-                <li>
-                    <label for="stok">Stok Buku</label>
-                    <input type="text" name="stok" id="stok">
-                </li>
-                <li>
-                    <label for="harga">Harga</label>
-                    <input type="text" name="harga" id="harga">
-                </li>
-                <br>
-                <button type="submit" name="tambah">Tambah Data!</button>
-                <button type="submit">
-                    <a href="../index.php" style="text-decoration: none; color: black;">Kembali</a>
-                </button>
-            </ul>
-        </form>
-    </div>
+    <form>
+        <div class="form-group">
+            <label for="gambar">Gambar</label>
+            <div>
+                <input type="file" class="form-control-file " name="gambar" id="gambar" required>
+            </div>
+        </div>
+        </div>
+        <div class="form-group">
+            <label for="judul-buku">Judul Buku</label>
+            <div>
+                <input type="text" class="form-control" name="judul_buku" id="judul-buku" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desk">Deskripsi</label>
+            <div>
+                <textarea class="form-control input-textarea" name="deskripsi" id="desk" required></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="penulis">Penulis</label>
+            <div>
+                <input type="text" class="form-control" name="penulis" id="penulis" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="tahun-terbit">Tahun Terbit</label>
+            <div>
+                <input type="number" class="form-control" name="tahun_terbit" id="tahun-terbit" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="penerbit">Penerbit</label>
+            <div>
+                <input type="text" class="form-control" name="penerbit" id="penerbit" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="harga">Harga</label>
+            <div>
+                <input type="text" class="form-control" name="harga" id="harga" required>
+            </div>
+        </div>
+        <div class="form-btn">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" name="tambah">Tambah Data!</button>
+            <button class="btn btn-secondary btn-lg btn-block">
+                <a href="../index.php" style="text-decoration: none; color: black;">Kembali</a>
+            </button>
+        </div>
+
+    </form>
 </body>
 
 </html>
