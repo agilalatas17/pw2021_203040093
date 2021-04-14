@@ -17,21 +17,23 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
 
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" href="../css/fontawesome.min.css?v2" />
+
     <!-- my css -->
-    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/admin.css?v2" />
     <title>Halaman Admin</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <table class="table-bordered flex-table">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>No.</th>
                     <th>Opsi</th>
                     <th>Gambar</th>
                     <th>Judul Buku</th>
-                    <!-- <th>Deskripsi</th> -->
                     <th>Penulis</th>
                     <th>Tahun Terbit</th>
                     <th>Penerbit</th>
@@ -45,19 +47,20 @@
             <tbody>
                 <tr>
                     <td>
-                        <?= $i; ?>
+                        <b><?= $i; ?></b>
                     </td>
                     <td>
-                        <div class=" wrapper-option-btn">
-                            <a href=""><button type="button" class="btn btn-primary btn-sm">Ubah</button></a>
-                            <a href=""><button type="button" class="btn btn-secondary btn-sm">Hapus</button></a>
+                        <div class=" wrapper-opt-btn">
+                            <a href=""><button type="button" class="btn btn-primary btn-sm"><i
+                                        class="fas fa-edit"></i><br>Ubah</button></a>
+                            <a href=""><button type="button" class="btn btn-danger btn-sm"><i
+                                        class="fas fa-trash-alt"></i><br>Hapus</button></a>
                         </div>
                     </td>
                     <td>
                         <img src="../assets/img/<?= $buku["gambar"]; ?>" alt="">
                     </td>
                     <td><?= $buku["judul_buku"]; ?></td>
-                    <!-- <td><?= $buku["deskripsi"]; ?></td> -->
                     <td><?= $buku["penulis"]; ?></td>
                     <td><?= $buku["tahun_terbit"]; ?></td>
                     <td><?= $buku["penerbit"]; ?></td>
@@ -69,6 +72,9 @@
             <?php endforeach; ?>
         </table>
     </div>
+
+    <!-- Fontawesome Js -->
+    <script src="../js/fontawesome.min.js"></script>
 </body>
 
 </html>
