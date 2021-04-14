@@ -89,6 +89,15 @@
                 </tr>
 
                 <tr>
+                    <th class="ket-data">Stok Buku</th>
+                    <td>
+                        <div class="keterangan">
+                            <p><?= $buku["stok"]; ?></p>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
                     <th class="ket-data">Harga</th>
                     <td>
                         <div class="keterangan">

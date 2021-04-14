@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(115deg, rgba(163, 110, 222, 1), rgba(79, 224, 195, 1)), url(../assets/library.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ul li {
+  list-style: none;
+}
+
+form {
+  border: 1px solid blue;
+  margin: auto;
+  width: 500px;
+  height: 400px;
+}
+
+.form-wrapper {
+  border: 1px solid red;
+}
