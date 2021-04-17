@@ -84,10 +84,9 @@
         $newFileName = uniqid();
         $newFileName .= '.';
         $newFileName .= $ekstensiGambar;
-
         // gambar siap di upload
-        move_uploaded_file($tmpName, '../assets/img/' . $fileName);
-        return $fileName;
+        move_uploaded_file($tmpName, '../assets/img/' . $newFileName);
+        return $newFileName;
     }
 
 
@@ -95,6 +94,47 @@
     function hapus($id) {
         $conn = koneksi_db();
         mysqli_query($conn, "DELETE FROM daftar_buku WHERE id = $id");
+
+        return mysqli_affected_rows($conn);
+    }
+
+    // Fungsi untuk mengubah / mengupdate data
+    function ubah($data) {
+        $conn = koneksi_db();
+
+        $id = htmlspecialchars ($data['id']);
+        $gambar = htmlspecialchars ($data['gambar']);
+        $gambarLama = htmlspecialchars ($data['gambarLama']);
+        $judul_buku = htmlspecialchars ($data['judul_buku']);
+        $deskripsi = htmlspecialchars ($data['deskripsi']);
+        $penulis = htmlspecialchars ($data['penulis']);
+        $tahun_terbit = htmlspecialchars ($data['tahun_terbit']);
+        $penerbit = htmlspecialchars ($data['penerbit']);
+        $stok = htmlspecialchars ($data['stok']);
+        $harga = htmlspecialchars ($data['harga']);
+
+        // cek user upload gambar baru atau tidak
+        if($_FILES['gambar']['error'] === 4) {
+            $gambar = $gambarLama;
+        } else {
+            $gambar = upload();
+        }
+
+        //query update data
+        $query = "UPDATE daftar_buku
+                SET
+                gambar = '$gambar',
+                judul_buku = '$judul_buku',
+                deskripsi = '$deskripsi',
+                penulis = '$penulis',
+                tahun_terbit = $tahun_terbit,
+                penerbit = '$penerbit',
+                stok = $stok,
+                harga = '$harga'
+                WHERE id = $id
+                ";
+
+        mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
     }

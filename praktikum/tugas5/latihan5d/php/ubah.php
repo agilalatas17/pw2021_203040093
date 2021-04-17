@@ -4,7 +4,7 @@
     $id = $_GET['id'];
     $buku =  query("SELECT * FROM daftar_buku WHERE id = $id")[0];
 
-    if(isset($_POST["ubah"])) {
+    if(isset($_POST['ubah'])) {
         if(ubah($_POST) > 0) {
             echo "<script>
                 alert('Data Berhasil diubah!');
@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- My CSS -->
-    <link rel="stylesheet" href="../css/tambah.css" />
+    <link rel="stylesheet" href="../css/ubah.css" />
 
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.css?v2" />
@@ -38,11 +38,17 @@
     <h1>Form Ubah Data Buku</h1>
 
     <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group hidden-input">
+            <div>
+                <input type="hidden" class="form-control-file" name="id" value="<?= $buku['id']; ?>">
+                <input type="hidden" class="form-control-file" name="gambarLama" value="<?= $buku['gambar']; ?>">
+            </div>
+        </div>
         <div class="form-group">
             <label for="gambar">Gambar</label>
             <div>
-                <input type="file" class="form-control-file " name="gambar" id="gambar" required
-                    value="<?= $buku['gambar']; ?>">
+                <img src="../assets/img/<?= $buku['gambar']; ?>">
+                <input type="file" class="form-control-file " name="gambar" id="gambar">
             </div>
         </div>
         </div>
@@ -94,7 +100,7 @@
             </div>
         </div>
         <div class="form-btn text-center">
-            <button type="submit" class="add-btn btn btn-primary btn-lg btn-block mb-1 mt-6" name="tambah">Ubah
+            <button type="submit" class="add-btn btn btn-primary btn-lg btn-block mb-1 mt-6" name="ubah">Ubah
                 Data!</button>
             <br>
             <button class="btn btn-secondary btn-lg">
