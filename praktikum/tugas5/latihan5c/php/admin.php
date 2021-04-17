@@ -55,10 +55,16 @@
                     </td>
                     <td>
                         <div class=" wrapper-opt-btn">
-                            <a href=""><button type="button" class="btn btn-primary btn-sm"><i
-                                        class="fas fa-edit"></i><br>Ubah</button></a>
-                            <a href=""><button type="button" class="btn btn-danger btn-sm"><i
-                                        class="fas fa-trash-alt"></i><br>Hapus</button></a>
+                            <a href="">
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-edit"></i><br>Ubah
+                                </button>
+                            </a>
+                            <a href="hapus.php?id=<?= $buku['id'] ?>" onclick="return confirm('Hapus Data?')">
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i><br>Hapus
+                                </button>
+                            </a>
                         </div>
                     </td>
                     <td>

@@ -1,0 +1,51 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.add {
+  margin: 1.375rem 0;
+}
+
+.add a {
+  font-weight: bolder;
+  border: 2px solid;
+}
+
+.add a i {
+  font-size: 22px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+th {
+  background-color: #ff8882;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+td {
+  font-weight: 600;
+}
+
+table img {
+  width: 9.375rem;
+}
+
+.wrapper-opt-btn {
+  width: 11.25rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wrapper-opt-btn button {
+  font-size: 0.75rem;
+  font-weight: 300;
+}

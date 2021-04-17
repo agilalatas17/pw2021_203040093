@@ -31,11 +31,12 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1; ?>
                 <?php foreach($toko_buku as $buku) : ?>
                 <tr>
                     <td>
                         <div class="id-buku">
-                            <p class="text-center"><?= $buku["id"]; ?>.</p>
+                            <p class="text-center"><?= $i; ?>.</p>
                         </div>
                     </td>
                     <td class="d-flex justify-content-between align-items-center">
@@ -48,6 +49,7 @@
                         </div>
                     </td>
                 </tr>
+                <?php $i++; ?>
                 <?php endforeach; ?>
             </tbody>
         </table>

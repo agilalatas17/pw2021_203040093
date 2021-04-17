@@ -48,9 +48,9 @@ textarea {
   line-height: inherit;
 }
 
-.btn {
+/* .btn {
   padding: 0.75rem;
-}
+} */
 
 form {
   width: 37.5rem;
@@ -72,6 +72,15 @@ label {
 
 .form-btn {
   margin: 2rem 0;
+}
+
+.form-btn .add-btn {
+  background-color: #007c77 !important;
+  font-weight: bolder;
+}
+
+.form-btn .add-btn:hover {
+  background-color: rgba(82, 208, 161, 0.6) !important;
 }
 
 .form-control {
