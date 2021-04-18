@@ -2,8 +2,16 @@
     // Menghubungkan dengan file PHP lainnya
     require 'functions.php';
 
-    // Melakukan Query
-    $toko_buku = query("SELECT * FROM daftar_buku");
+    if(isset($_GET['cari'])) {
+        $keyword = $_GET['keyword'];
+        $toko_buku = query ("SELECT * FROM daftar_buku WHERE
+                    judul_buku LIKE '%$keyword%' OR        
+                    penulis LIKE '%$keyword%' OR        
+                    tahun_terbit LIKE '%$keyword%' OR        
+                    penerbit LIKE '%$keyword%' ");
+    } else {
+        $toko_buku = query ("SELECT * FROM daftar_buku");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +29,7 @@
     <link rel="stylesheet" href="../css/fontawesome.min.css" />
 
     <!-- my css -->
-    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/admin.css?v2" />
     <title>Halaman Admin</title>
 </head>
 
@@ -30,6 +38,15 @@
         <div class="add">
             <a href="tambah.php" class="btn btn-outline-info"><i class="fas fa-plus-circle"></i> Tambah Data</a>
         </div>
+
+        <form class="search" action="" method="get">
+            <div class="form-group">
+                <input type="text" class="form-control" name="keyword" autofocus>
+                <button type="submit" class="btn btn-info" name="cari"><i class="fas fa-search"></i></button>
+
+            </div>
+        </form>
+
 
         <table class="table table-bordered">
             <thead>
@@ -46,6 +63,14 @@
                 </tr>
             </thead>
 
+            <!-- cek data di cari atau tidak -->
+            <?php if (empty($toko_buku)) : ?>
+            <tr>
+                <td colspan="9">
+                    <h1>Data tidak ditemukan</h1>
+                </td>
+            </tr>
+            <?php else : ?>
             <?php $i = 1; ?>
             <?php foreach ($toko_buku as $buku) : ?>
             <tbody>
@@ -80,6 +105,7 @@
             </tbody>
             <?php $i++; ?>
             <?php endforeach; ?>
+            <?php endif; ?>
         </table>
     </div>
 

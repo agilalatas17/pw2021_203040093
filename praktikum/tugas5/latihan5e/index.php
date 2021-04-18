@@ -2,8 +2,12 @@
     // menghubungkan dengan file php lainnya
     require 'php/functions.php';
 
-    // melakukan query
-    $toko_buku = query("SELECT * FROM daftar_buku");
+    if(isset($_GET['cari'])) {
+        $keyword = $_GET['keyword'];
+        $toko_buku = query ("SELECT * FROM daftar_buku WHERE judul_buku LIKE '%$keyword%' ");
+    } else {
+        $toko_buku = query ("SELECT * FROM daftar_buku");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,16 +17,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- my css -->
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/index.css?v2">
     <title>Daftar Buku</title>
 </head>
 
 <body>
     <div class="container">
+        <div class="wrapper-cta">
+            <div class="go-to-admin-page">
+                <a href="./php/admin.php" class="btn btn-success">Masuk Ke Halaman
+                    Admin</a>
+            </div>
+            <form class="search" action="" method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="keyword" autofocus>
+                    <button type="submit" class="btn btn-info" name="cari"><i class="fas fa-search"></i></button>
+
+                </div>
+            </form>
+        </div>
+
+
+
         <table class="table table-striped">
             <thead>
                 <tr class="bg-success text-center text-white">
@@ -31,6 +54,13 @@
                 </tr>
             </thead>
             <tbody>
+                <?php if (empty($toko_buku)) : ?>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <h1>Data tidak ditemukan</h1>
+                    </td>
+                </tr>
+                <?php else : ?>
                 <?php $i = 1; ?>
                 <?php foreach($toko_buku as $buku) : ?>
                 <tr>
@@ -51,9 +81,13 @@
                 </tr>
                 <?php $i++; ?>
                 <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
 </body>
+
+<!-- fontawesome js -->
+<script src="./js/fontawesome.min.js"></script>
 
 </html>
