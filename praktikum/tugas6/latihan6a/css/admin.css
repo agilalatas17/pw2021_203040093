@@ -1,0 +1,73 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* .wrapper-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+.add {
+  position: absolute;
+}
+
+.add a {
+  font-weight: bolder;
+  border: 2px solid;
+}
+
+.add a i {
+  font-size: 22px;
+}
+
+.search .form-group {
+  margin: 1.375rem 0;
+  text-align: center;
+}
+
+.search .form-control .btn {
+  vertical-align: inherit !important;
+}
+
+.search .form-group .form-control {
+  display: inline-block !important;
+  width: 35% !important;
+  margin-right: 0.25;
+}
+
+/* Table */
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+th {
+  background-color: #ff8882;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+td {
+  font-weight: 600;
+}
+
+table img {
+  width: 9.375rem;
+}
+
+.wrapper-opt-btn {
+  width: 11.25rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wrapper-opt-btn button {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
