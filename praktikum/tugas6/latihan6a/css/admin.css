@@ -5,27 +5,25 @@ body {
   line-height: 1.5;
 }
 
-/* .wrapper-cta {
+.btn-cta {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-} */
-
-.add {
-  position: absolute;
+  margin: 1.25rem 0;
 }
 
-.add a {
+.add a,
+.logout a {
   font-weight: bolder;
   border: 2px solid;
 }
 
-.add a i {
+.add a i,
+.logout a i {
   font-size: 22px;
 }
 
 .search .form-group {
-  margin: 1.375rem 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -35,9 +33,13 @@ body {
 
 .search .form-group .form-control {
   display: inline-block !important;
-  width: 35% !important;
-  margin-right: 0.25;
+  width: 80% !important;
+  /* margin-right: 0.25; */
 }
+
+/* .logout {
+  left: 7%;
+} */
 
 /* Table */
 .table th,

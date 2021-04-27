@@ -29,23 +29,29 @@
     <link rel="stylesheet" href="../css/fontawesome.min.css" />
 
     <!-- my css -->
-    <link rel="stylesheet" href="../css/admin.css?v2" />
+    <link rel="stylesheet" href="../css/admin.css" />
     <title>Halaman Admin</title>
 </head>
 
 <body>
     <div class="container-lg">
-        <div class="add">
-            <a href="tambah.php" class="btn btn-outline-info"><i class="fas fa-plus-circle"></i> Tambah Data</a>
-        </div>
-
-        <form class="search" action="" method="get">
-            <div class="form-group">
-                <input type="text" class="form-control" name="keyword" autofocus>
-                <button type="submit" class="btn btn-info" name="cari"><i class="fas fa-search"></i></button>
-
+        <div class="btn-cta">
+            <div class="add">
+                <a href="tambah.php" class="btn btn-outline-info"><i class="fas fa-plus-circle"></i> Tambah Data</a>
             </div>
-        </form>
+
+            <form class="search" action="" method="get">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="keyword" autofocus>
+                    <button type="submit" class="btn btn-info" name="cari"><i class="fas fa-search"></i></button>
+
+                </div>
+            </form>
+
+            <div class="logout">
+                <a href="logout.php" class="btn btn-outline-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
 
 
         <table class="table table-bordered">
