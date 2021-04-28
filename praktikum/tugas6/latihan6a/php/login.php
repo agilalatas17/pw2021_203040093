@@ -48,7 +48,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="../css/login.css?v2" />
 
-    <title>Login</title>
+    <title>LOGIN</title>
 </head>
 
 <body>
@@ -68,7 +68,7 @@
                     <p>Username atau Password salah</p>
                     <?php endif; ?>
 
-                    <h1>Log in</h1>
+                    <h1 class="title-login">Log in</h1>
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div>
@@ -92,7 +92,7 @@
 
                     <div class="form-btn text-center">
                         <button type="submit" class="add-btn btn btn-primary btn-lg btn-block mb-1 mt-6"
-                            name="tambah">LOGIN</button>
+                            name="submit">LOGIN</button>
                     </div>
 
                 </form>

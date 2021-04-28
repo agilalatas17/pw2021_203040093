@@ -1,0 +1,91 @@
+@font-face {
+  font-family: Quicksand;
+  src: url(../assets/fonts/Quicksand/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url(../assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-height: 100vh;
+  font-family: Quicksand;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  padding: 0 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.row {
+  margin: 5rem 0;
+  border: 0.3125rem solid #e5e9f2;
+}
+
+.title-welcome {
+  margin: 0;
+  padding: 2.25rem 0;
+  font-family: 'Playfair Display';
+  color: #fff !important;
+}
+
+.img-svg {
+  /* margin: auto; */
+  margin: 0 auto 2.75rem auto;
+  background: url(../assets/svg/Login_vector.svg);
+  width: 25rem;
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.left-col {
+  background: #ff7f50;
+  border-radius: 0 1.875rem 1.875rem 0;
+}
+
+form {
+  /* border: 2px solid green; */
+  margin: auto;
+  padding: 5rem;
+  /* width: 28.75rem; */
+}
+
+form label {
+  font-weight: bold;
+}
+
+form button {
+  background-color: #ff7f50 !important;
+}
+
+form button:hover {
+  background-color: #ff6e3a !important;
+  box-shadow: 0px 10px 42px -14px rgba(0, 0, 0, 0.5);
+}
+
+.title-login {
+  margin-bottom: 4.6875rem;
+}
+
+.form-btn {
+  margin: 4.125rem 0 0 0;
+}
+
+.form-control {
+  background-color: #e5e9f2 !important;
+}

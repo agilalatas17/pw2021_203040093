@@ -74,6 +74,10 @@ label {
   margin: 2rem 0;
 }
 
+button {
+  font-weight: bold;
+}
+
 .form-btn .add-btn {
   background-color: #007c77 !important;
   font-weight: bolder;
