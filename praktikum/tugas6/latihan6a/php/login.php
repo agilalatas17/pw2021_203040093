@@ -11,18 +11,19 @@
     //login
     if(isset($_POST['submit'])) {
         $username = $_POST['username'];
-        $password = $POST['password'];
-        $cek_user = mysqli_query(koneksi_db(), "SELECT * FROM user WHERE username = '$username");
+        $password = $_POST['password'];
+        $cek_user = mysqli_query(koneksi_db(), "SELECT * FROM users WHERE username = '$username' ");
 
         // mencocokan Username dan Password
-        if(mysqli_fetch_assoc($cek_user)) {
+        if(mysqli_fetch_assoc($cek_user) > 0) {
             $row = mysqli_fetch_assoc($cek_user);
+
             if($password == $row['password']) {
                 $_SESSION['username'] = $_POST['username'];
                 $_SESSION['hash'] = $row['id'];
             }
 
-            if ($row = mysqli_fetch_assoc($cek_user)) {
+            if ($row['id'] == $_SESSION['hash']) {
                 header("Location: admin.php");
                 die;
             }
@@ -64,10 +65,6 @@
             </div>
             <div class="wrapper col-6 right-col">
                 <form action="" method="post">
-                    <?php if(isset($error)) : ?>
-                    <p>Username atau Password salah</p>
-                    <?php endif; ?>
-
                     <h1 class="title-login">Log in</h1>
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -79,9 +76,14 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div>
-                            <input type="text" class="form-control" name="password" id="password" required>
+                            <input type="password" class="form-control" name="password" id="password" required>
                         </div>
                     </div>
+
+                    <!-- Warning Text -->
+                    <?php if(isset($error)) : ?>
+                    <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> Username atau Password salah</p>
+                    <?php endif; ?>
 
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" name="remember" id="remember">
