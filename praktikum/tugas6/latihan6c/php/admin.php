@@ -9,6 +9,16 @@
     // Menghubungkan dengan file PHP lainnya
     require 'functions.php';
 
+    // PAGINATION
+    // Konfigurasi
+    $jumlahDataPerHalaman = 3;
+    $jumlahData = count(query("SELECT * FROM daftar_buku"));
+    $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+
+    $halamanAktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+
+    $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
     if(isset($_GET['cari'])) {
         $keyword = $_GET['keyword'];
         $toko_buku = query ("SELECT * FROM daftar_buku WHERE
@@ -17,7 +27,7 @@
                     tahun_terbit LIKE '%$keyword%' OR        
                     penerbit LIKE '%$keyword%' ");
     } else {
-        $toko_buku = query ("SELECT * FROM daftar_buku");
+        $toko_buku = query ("SELECT * FROM daftar_buku LIMIT $awalData, $jumlahDataPerHalaman");
     }
 ?>
 
@@ -120,6 +130,47 @@
             <?php endforeach; ?>
             <?php endif; ?>
         </table>
+
+        <!-- NAVIGASI -->
+        <nav aria-label="...">
+            <ul class="pagination pagination-sm">
+                <!-- Previous -->
+                <?php if($halamanAktif > 1) : ?>
+                <li class="page-item">
+                    <a class="page-link" href="?halaman=<?= $halamanAktif - 1; ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <?php endif ?>
+
+
+                <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                <?php if ($i == $halamanAktif): ?>
+                <li class="page-item active">
+                    <a class="page-link" href="?halaman=<?= $i; ?>">
+                        <?= $i; ?>
+                    </a>
+                </li>
+                <?php else : ?>
+                <li class="page-item">
+                    <a class="page-link" href="?halaman=<?= $i; ?>">
+                        <?= $i; ?>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <?php endfor; ?>
+
+                <!-- Next -->
+                <?php if($halamanAktif < $jumlahHalaman) : ?>
+                <li class="page-item">
+                    <a class="page-link" href="?halaman=<?= $halamanAktif + 1; ?>" aria-label="Previous">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+        <!-- End Navigation -->
     </div>
 
     <!-- Fontawesome Js -->
